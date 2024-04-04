@@ -5,28 +5,18 @@ import TimelineItemComponent from "../components/TimelineItem.tsx";
 
 
 interface Props {
-  /**
-  * @description The description of name.
-  */
   name?: string;
-  /**
-  * @description The description of color.
-  */
-  color?: string;
   timelineItems: TimelineItem[];
 }
 
-/**
-* @title {{{name}}}
-*/
 interface TimelineItem {
   name: string;
-  time: string;
+  date: string;
   category: "Filmes" | "Séries" | "Séries animadas" | "Animações";
   image?: ImageWidget;
 }
 
-export default function Section({ name = "Capy", color = "green", timelineItems }: Props) {
+export default function TimeLine({ name = "", timelineItems }: Props) {
 
   const colorVariants = {
     blue: 'bg-red-200',
@@ -43,7 +33,7 @@ export default function Section({ name = "Capy", color = "green", timelineItems 
     else setSelectedCategories([...selectedCategories, categorie]);
   }
 
-  return <div class={`bg-${color}-200 p-8 shadow-md  bg-gray-950 text-white min-h-[100vh]`}>
+  return <div class={`p-8 shadow-md  bg-gray-950 text-white min-h-[100vh]`}>
     <div class="flex items-center fixed top-0 left-0 w-full bg-blue-900 justify-center space-x-4 min-h-10">
       {
         categories.map(c => (
@@ -66,7 +56,7 @@ export default function Section({ name = "Capy", color = "green", timelineItems 
       .map(i => (
         <TimelineItemComponent 
           name={i.name}
-          time={i.time}
+          time={i.date}
           image={i.image}
         />
       ))
