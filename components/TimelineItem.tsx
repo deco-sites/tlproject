@@ -9,7 +9,7 @@ interface Props {
 
 export default function TimelineItem ({time, image, name}: Props) {
   return <div class="flex items-center justify-center mb-3">
-    <p class="w-[30vw] flex items-left items-center">
+    <p class="w-[20vw] flex items-left items-center">
       <span class="mr-5">{time}</span>
       <span class="flex-grow border-b border-white mr-4"></span>
     </p>
@@ -18,7 +18,7 @@ export default function TimelineItem ({time, image, name}: Props) {
       src={image || ""}
       width={100}
     />
-    <p class=" w-[30vw]">
+    <p class=" text-center w-[20vw]">
       {name}
     </p>
   </div>
