@@ -1,6 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import { useState } from 'preact/hooks';
 import TimeLine from "./TimeLine.tsx";
+import Image from "apps/website/components/Image.tsx";
 
 /**
  * @title {{name}}
@@ -8,6 +9,7 @@ import TimeLine from "./TimeLine.tsx";
 interface ITimeline {
   name: string;
   timelineItems: TimelineItem[];
+  backgroundImage?: ImageWidget;
 }
 
 /**
@@ -24,8 +26,16 @@ interface TimelineItem {
 export default function Section({ timelines }: { timelines: ITimeline[] } ) {
   const [selectedTimeline, setSelectedTimeline] = useState(0);
   return (
-    <>
-      <nav class="fixed top-0 left-0 w-full mt-10  bg-gray-900 border-b-1 border-white">
+    <div className="relative h-screen w-full">
+      
+      <div className="fixed bottom-0 left-0 -z-50 bg-gray-950">
+          <Image
+            src={(timelines[selectedTimeline].backgroundImage || "")}
+            width={2000}
+            height={5000}
+          />
+      </div>
+      <nav class="fixed top-0 left-0 w-full mt-10 z-50 bg-gray-900 border-b-1 border-white">
         <ul class="flex flex-wrap justify-center text-white space-x-4 min-h-[30px] mt-[10px]">
           {
             timelines.map((t, i) => (
@@ -45,6 +55,6 @@ export default function Section({ timelines }: { timelines: ITimeline[] } ) {
         name={timelines[selectedTimeline].name} 
         timelineItems={timelines[selectedTimeline].timelineItems}
       />)}  
-    </>
+    </div>
   )
 }

@@ -16,6 +16,9 @@ export default {
           "100%": { transform: "translateX(-50%)" },
         },
       },
+      backgroundImage: {
+        'backgroundImage-gradient': 'linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.95), black, rgba(0,0,0,0.95), rgba(0,0,0,0.5))',
+      },
     },
   },
 };
