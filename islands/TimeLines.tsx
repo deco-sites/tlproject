@@ -34,7 +34,7 @@ export default function Section({ timelines }: { timelines: ITimeline[] } ) {
                 class= {`${i === selectedTimeline ? 'border-b-2 border-yellow-500' : ''} cursor-pointer`}
                 onClick={ () => setSelectedTimeline(i) }
               >
-                {t.name}
+                <button>{t.name}</button>
               </li>
             ))
           }

@@ -24,7 +24,7 @@ export default function TimeLine({ name = "", timelineItems }: Props) {
   }
   const categories = ["Filmes", "Séries", "Séries animadas", "Animações"];
 
-  const [selectedCategories, setSelectedCategories] = useState(["Filmes"]);
+  const [selectedCategories, setSelectedCategories] = useState(["Filmes", "Séries", "Séries animadas", "Animações"]);
 
   function handleCheckboxChange(categorie: string) {
     if (selectedCategories.includes(categorie)) {
