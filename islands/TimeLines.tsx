@@ -25,8 +25,8 @@ export default function Section({ timelines }: { timelines: ITimeline[] } ) {
   const [selectedTimeline, setSelectedTimeline] = useState(0);
   return (
     <>
-      <nav>
-        <ul class="flex justify-center text-white bg-gray-950 space-x-4 mt-[40px]">
+      <nav class="fixed top-0 left-0 w-full mt-10  bg-gray-900 border-b-1 border-white">
+        <ul class="flex flex-wrap justify-center text-white space-x-4 min-h-[30px] mt-[10px]">
           {
             timelines.map((t, i) => (
               <li 
