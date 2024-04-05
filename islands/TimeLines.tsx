@@ -27,7 +27,6 @@ export default function Section({ timelines }: { timelines: ITimeline[] } ) {
   const [selectedTimeline, setSelectedTimeline] = useState(0);
   return (
     <div className="relative h-screen w-full">
-      
       <div className="fixed bottom-0 left-0 -z-50 bg-gray-950">
           <Image
             src={(timelines[selectedTimeline].backgroundImage || "")}
