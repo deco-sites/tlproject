@@ -49,7 +49,7 @@ export default function TimeLine({ name = "", timelineItems }: Props) {
       }
     </div>
     
-    <h2 class="text-center text-2xl font-semibold mt-4 mb-4">{name}</h2>
+    <h2 class="text-center text-2xl font-semibold mt-14 mb-4">{name}</h2>
     {
       timelineItems
       .filter(i => selectedCategories.includes(i.category))
